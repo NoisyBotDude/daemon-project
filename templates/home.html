@@ -7,6 +7,11 @@
   <title>Document</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       background-color: azure;
       overflow-x: hidden;
@@ -55,7 +60,6 @@
     li a:hover {
       background-color: lightgrey;
       background-position: initial;
-      /* padding: 10px; */
       border-radius: 10px;
     }
 
@@ -73,49 +77,35 @@
       left: 15%;
     }
 
-    .cards {
-      position: relative;
-    }
-
-    .card1, .card2, .card3, .card4, .card5, .card6 {
-      position: relative;
-      background-color:mediumaquamarine;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      max-width: 20%;
-      margin: 30px;
-      padding: 10px;
-      text-align: center;
-      font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    }
-
-    .card1 {
-      top: 150px;
-      left: 5%;
-    }
+    .column {
+      float: left;
+      width: 25%;
+      padding: 0 19px;
+      margin-right: 100px;
+      margin-bottom: 10px;
+    } 
     
-    .card2 {
-      top: -110px;
-      left: 37%;
+    .row {
+      margin: 5px;
     }
 
-    .card3 {
-      top: -370px;
-      left: 69%;
+    .card {
+      position: relative;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      padding: 16px;
+      text-align: center;
+      background-color: #32a3cf;
+      left: 20%;
+      top: 30vh;
+      margin-bottom: 40px;
     }
 
-    .card4 {
-      top: -320px;
-      left: 5%;
-    }
-
-    .card5 {
-      top: -585px;
-      left: 37%;
-    }
-
-    .card6 {
-      top: -850px;
-      left: 69%;
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+      }
     }
 
   </style>
@@ -140,71 +130,87 @@
     <img src="/static/images/daemon-logo.jpeg" width="30%" height="30%">
   </div>
   <div class="cards">
-    <div class="card1">
-      <h1>Card 1</h1>
-      <p>Just Some Test Text</p>
-      <div style="margin: 24px 0;">
-          <a href="#"><i class="fa fa-instagram"></i></a> 
-          <a href="#"><i class="fa fa-twitter"></i></a>  
-          <a href="#"><i class="fa fa-linkedin"></i></a>  
-          <a href="#"><i class="fa fa-facebook"></i></a> 
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <h1>Card 1</h1>
+              <p>Just Some Test Text</p>
+              <div style="margin: 24px 0;">
+                  <a href="#"><i class="fa fa-instagram"></i></a> 
+                  <a href="#"><i class="fa fa-twitter"></i></a>  
+                  <a href="#"><i class="fa fa-linkedin"></i></a>  
+                  <a href="#"><i class="fa fa-facebook"></i></a> 
+              </div>
+              <p><button> Contact </button></p>
+        </div>
       </div>
-      <p><button> Contact </button></p>
+      <div class="column">
+        <div class="card">
+          <h1>Card 2</h1>
+              <p>Just Some Test Text</p>
+              <div style="margin: 24px 0;">
+                  <a href="#"><i class="fa fa-instagram"></i></a> 
+                  <a href="#"><i class="fa fa-twitter"></i></a>  
+                  <a href="#"><i class="fa fa-linkedin"></i></a>  
+                  <a href="#"><i class="fa fa-facebook"></i></a> 
+              </div>
+              <p><button> Contact </button></p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <h1>Card 3</h1>
+              <p>Just Some Test Text</p>
+              <div style="margin: 24px 0;">
+                  <a href="#"><i class="fa fa-instagram"></i></a> 
+                  <a href="#"><i class="fa fa-twitter"></i></a>  
+                  <a href="#"><i class="fa fa-linkedin"></i></a>  
+                  <a href="#"><i class="fa fa-facebook"></i></a> 
+              </div>
+              <p><button> Contact </button></p>
+        </div>
+      </div>
     </div>
-    <div class="card2">
-      <h1>Card 1</h1>
-      <p>Just Some Test Text</p>
-      <div style="margin: 24px 0;">
-          <a href="#"><i class="fa fa-instagram"></i></a> 
-          <a href="#"><i class="fa fa-twitter"></i></a>  
-          <a href="#"><i class="fa fa-linkedin"></i></a>  
-          <a href="#"><i class="fa fa-facebook"></i></a> 
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <h1>Card 4</h1>
+              <p>Just Some Test Text</p>
+              <div style="margin: 24px 0;">
+                  <a href="#"><i class="fa fa-instagram"></i></a> 
+                  <a href="#"><i class="fa fa-twitter"></i></a>  
+                  <a href="#"><i class="fa fa-linkedin"></i></a>  
+                  <a href="#"><i class="fa fa-facebook"></i></a> 
+              </div>
+              <p><button> Contact </button></p>
+        </div>
       </div>
-      <p><button> Contact </button></p>
-    </div>
-    <div class="card3">
-      <h1>Card 1</h1>
-      <p>Just Some Test Text</p>
-      <div style="margin: 24px 0;">
-          <a href="#"><i class="fa fa-instagram"></i></a> 
-          <a href="#"><i class="fa fa-twitter"></i></a>  
-          <a href="#"><i class="fa fa-linkedin"></i></a>  
-          <a href="#"><i class="fa fa-facebook"></i></a> 
+      <div class="column">
+        <div class="card">
+          <h1>Card 5</h1>
+              <p>Just Some Test Text</p>
+              <div style="margin: 24px 0;">
+                  <a href="#"><i class="fa fa-instagram"></i></a> 
+                  <a href="#"><i class="fa fa-twitter"></i></a>  
+                  <a href="#"><i class="fa fa-linkedin"></i></a>  
+                  <a href="#"><i class="fa fa-facebook"></i></a> 
+              </div>
+              <p><button> Contact </button></p>
+        </div>
       </div>
-      <p><button> Contact </button></p>
-    </div>
-    <div class="card4">
-      <h1>Card 1</h1>
-      <p>Just Some Test Text</p>
-      <div style="margin: 24px 0;">
-          <a href="#"><i class="fa fa-instagram"></i></a> 
-          <a href="#"><i class="fa fa-twitter"></i></a>  
-          <a href="#"><i class="fa fa-linkedin"></i></a>  
-          <a href="#"><i class="fa fa-facebook"></i></a> 
+      <div class="column">
+        <div class="card">
+          <h1>Card 6</h1>
+              <p>Just Some Test Text</p>
+              <div style="margin: 24px 0;">
+                  <a href="#"><i class="fa fa-instagram"></i></a> 
+                  <a href="#"><i class="fa fa-twitter"></i></a>  
+                  <a href="#"><i class="fa fa-linkedin"></i></a>  
+                  <a href="#"><i class="fa fa-facebook"></i></a> 
+              </div>
+              <p><button> Contact </button></p>
+        </div>
       </div>
-      <p><button> Contact </button></p>
-    </div>
-    <div class="card5">
-      <h1>Card 1</h1>
-      <p>Just Some Test Text</p>
-      <div style="margin: 24px 0;">
-          <a href="#"><i class="fa fa-instagram"></i></a> 
-          <a href="#"><i class="fa fa-twitter"></i></a>  
-          <a href="#"><i class="fa fa-linkedin"></i></a>  
-          <a href="#"><i class="fa fa-facebook"></i></a> 
-      </div>
-      <p><button> Contact </button></p>
-    </div>
-    <div class="card6">
-      <h1>Card 1</h1>
-      <p>Just Some Test Text</p>
-      <div style="margin: 24px 0;">
-          <a href="#"><i class="fa fa-instagram"></i></a> 
-          <a href="#"><i class="fa fa-twitter"></i></a>  
-          <a href="#"><i class="fa fa-linkedin"></i></a>  
-          <a href="#"><i class="fa fa-facebook"></i></a> 
-      </div>
-      <p><button> Contact </button></p>
     </div>
   </div>
 </body>
