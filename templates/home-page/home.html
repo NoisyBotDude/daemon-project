@@ -1,5 +1,8 @@
 {% extends 'home-page/layout.html' %}
 
+{% block title %}
+  Home
+{% endblock %}
 {% block styles %}
 
     <link rel="stylesheet" href="/static/home-page/css/home.css">
@@ -16,36 +19,11 @@
     <img src="/static/home-page/images/daemon-logo.png" width="30%" height="30%">
   </div>
   <div class="cards">
+    {% for i in range(6) %}
     <div class="row">
       <div class="column">
         <div class="card">
-          <h1>Card 1</h1>
-              <p>Just Some Test Text</p>
-              <div style="margin: 24px 0;">
-                  <a href="#"><i class="fa fa-instagram"></i></a> 
-                  <a href="#"><i class="fa fa-twitter"></i></a>  
-                  <a href="#"><i class="fa fa-linkedin"></i></a>  
-                  <a href="#"><i class="fa fa-facebook"></i></a> 
-              </div>
-              <p><button> Contact </button></p>
-        </div>
-      </div>
-      <div class="column">
-        <div class="card">
-          <h1>Card 2</h1>
-              <p>Just Some Test Text</p>
-              <div style="margin: 24px 0;">
-                  <a href="#"><i class="fa fa-instagram"></i></a> 
-                  <a href="#"><i class="fa fa-twitter"></i></a>  
-                  <a href="#"><i class="fa fa-linkedin"></i></a>  
-                  <a href="#"><i class="fa fa-facebook"></i></a> 
-              </div>
-              <p><button> Contact </button></p>
-        </div>
-      </div>
-      <div class="column">
-        <div class="card">
-          <h1>Card 3</h1>
+          <h1> Card {{ (i+1) }}</h1>
               <p>Just Some Test Text</p>
               <div style="margin: 24px 0;">
                   <a href="#"><i class="fa fa-instagram"></i></a> 
@@ -57,130 +35,25 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="column">
-        <div class="card">
-          <h1>Card 4</h1>
-              <p>Just Some Test Text</p>
-              <div style="margin: 24px 0;">
-                  <a href="#"><i class="fa fa-instagram"></i></a> 
-                  <a href="#"><i class="fa fa-twitter"></i></a>  
-                  <a href="#"><i class="fa fa-linkedin"></i></a>  
-                  <a href="#"><i class="fa fa-facebook"></i></a> 
-              </div>
-              <p><button> Contact </button></p>
-        </div>
-      </div>
-      <div class="column">
-        <div class="card">
-          <h1>Card 5</h1>
-              <p>Just Some Test Text</p>
-              <div style="margin: 24px 0;">
-                  <a href="#"><i class="fa fa-instagram"></i></a> 
-                  <a href="#"><i class="fa fa-twitter"></i></a>  
-                  <a href="#"><i class="fa fa-linkedin"></i></a>  
-                  <a href="#"><i class="fa fa-facebook"></i></a> 
-              </div>
-              <p><button> Contact </button></p>
-        </div>
-      </div>
-      <div class="column">
-        <div class="card">
-          <h1>Card 6</h1>
-              <p>Just Some Test Text</p>
-              <div style="margin: 24px 0;">
-                  <a href="#"><i class="fa fa-instagram"></i></a> 
-                  <coa href="#"><i class="fa fa-twitter"></i></a>  
-                  <a href="#"><i class="fa fa-linkedin"></i></a>  
-                  <a href="#"><i class="fa fa-facebook"></i></a> 
-              </div>
-              <p><button> Contact </button></p>
-        </div>
-      </div>
-    </div>
+    {% endfor %}
     <div id="more">
-      <div class="row">
-        <div class="column">
-          <div class="card">
-            <h1>Card 7</h1>
-                <p>Just Some Test Text</p>
-                <div style="margin: 24px 0;">
-                    <a href="#"><i class="fa fa-instagram"></i></a> 
-                    <a href="#"><i class="fa fa-twitter"></i></a>  
-                    <a href="#"><i class="fa fa-linkedin"></i></a>  
-                    <a href="#"><i class="fa fa-facebook"></i></a> 
-                </div>
-                <p><button> Contact </button></p>
-          </div>
-        </div>
-        <div class="column">
-          <div class="card">
-            <h1>Card 8</h1>
-                <p>Just Some Test Text</p>
-                <div style="margin: 24px 0;">
-                    <a href="#"><i class="fa fa-instagram"></i></a> 
-                    <a href="#"><i class="fa fa-twitter"></i></a>  
-                    <a href="#"><i class="fa fa-linkedin"></i></a>  
-                    <a href="#"><i class="fa fa-facebook"></i></a> 
-                </div>
-                <p><button> Contact </button></p>
-          </div>
-        </div>
-        <div class="column">
-          <div class="card">
-            <h1>Card 9</h1>
-                <p>Just Some Test Text</p>
-                <div style="margin: 24px 0;">
-                    <a href="#"><i class="fa fa-instagram"></i></a> 
-                    <a href="#"><i class="fa fa-twitter"></i></a>  
-                    <a href="#"><i class="fa fa-linkedin"></i></a>  
-                    <a href="#"><i class="fa fa-facebook"></i></a> 
-                </div>
-                <p><button> Contact </button></p>
-          </div>
+      {% for i in range(6, 12) %}
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <h1> Card {{ (i+1) }}</h1>
+              <p>Just Some Test Text</p>
+              <div style="margin: 24px 0;">
+                  <a href="#"><i class="fa fa-instagram"></i></a> 
+                  <a href="#"><i class="fa fa-twitter"></i></a>  
+                  <a href="#"><i class="fa fa-linkedin"></i></a>  
+                  <a href="#"><i class="fa fa-facebook"></i></a> 
+              </div>
+              <p><button> Contact </button></p>
         </div>
       </div>
-      <div class="row">
-        <div class="column">
-          <div class="card">
-            <h1>Card 10</h1>
-                <p>Just Some Test Text</p>
-                <div style="margin: 24px 0;">
-                    <a href="#"><i class="fa fa-instagram"></i></a> 
-                    <a href="#"><i class="fa fa-twitter"></i></a>  
-                    <a href="#"><i class="fa fa-linkedin"></i></a>  
-                    <a href="#"><i class="fa fa-facebook"></i></a> 
-                </div>
-                <p><button> Contact </button></p>
-          </div>
-        </div>
-        <div class="column">
-          <div class="card">
-            <h1>Card 11</h1>
-                <p>Just Some Test Text</p>
-                <div style="margin: 24px 0;">
-                    <a href="#"><i class="fa fa-instagram"></i></a> 
-                    <a href="#"><i class="fa fa-twitter"></i></a>  
-                    <a href="#"><i class="fa fa-linkedin"></i></a>  
-                    <a href="#"><i class="fa fa-facebook"></i></a> 
-                </div>
-                <p><button> Contact </button></p>
-          </div>
-        </div>
-        <div class="column">
-          <div class="card">
-            <h1>Card 12</h1>
-                <p>Just Some Test Text</p>
-                <div style="margin: 24px 0;">
-                    <a href="#"><i class="fa fa-instagram"></i></a> 
-                    <a href="#"><i class="fa fa-twitter"></i></a>  
-                    <a href="#"><i class="fa fa-linkedin"></i></a>  
-                    <a href="#"><i class="fa fa-facebook"></i></a> 
-                </div>
-                <p><button> Contact </button></p>
-          </div>
-        </div>
-      </div>
+    </div>
+    {% endfor %}
     </div>
   </div>
   <button onClick="loadMore()" id="more-btn">More</button>
