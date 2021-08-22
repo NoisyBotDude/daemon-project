@@ -8,8 +8,11 @@ body {
   }
 
 .navbar {
-    position: relative;
-    top: 4vh;
+    position: sticky;
+    top: 1px;
+    background-color: azure;
+    padding-top: 20px;
+    z-index: 1;
   }
 
 ul {
