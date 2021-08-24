@@ -1,11 +1,11 @@
-{% extends 'home-page/layout.html' %}
+{% extends 'user/layout.html' %}
 
 {% block title %}
   Home
 {% endblock %}
 {% block styles %}
 
-    <link rel="stylesheet" href="/static/home-page/css/home.css">
+    <link rel="stylesheet" href="/static/css/user/home.css">
 
 {% endblock %}
 {%block content %}
@@ -16,7 +16,7 @@
     </p>
   </div>
   <div class="photo">
-    <img src="/static/home-page/images/daemon-logo.png" width="30%" height="30%">
+    <img src="/static/images/daemon-logo.png" width="30%" height="30%">
   </div>
   <div class="cards">
     {% for i in range(6) %}
@@ -57,6 +57,6 @@
     </div>
   </div>
   <button onClick="loadMore()" id="more-btn">More</button>
-  <script src="/static/home-page/js/home.js"></script>
+  <script src="/static/js/home.js"></script>
 {% endblock %}
 </html>
