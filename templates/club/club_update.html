@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/static/club/css/club_update.css">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/static/css/club_update.css">
 </head>
 <body>
     <h1> Update a club </h1>
     <div class="add">
-        <form method="POST" action="">
+        <form method="POST" action="{{ url_for('admin.update_response') }}">
             <h3><label for="clubname">Club Name</label></h3>
-            <input type="text" name="club-name" placeholder="Club name">
-            <h3><label for="portion-update" >Portion to be Updated</label></h3>
-            <input type="text" name="portion-update" placeholder="Portion to be updated">
-            <h3><label for="updated-information">Updated Information</label></h3>
-            <textarea id="updated-information" name="information" placeholder="Updated Information" rows="6" cols="50"></textarea>
+            <input type="text" name="club-name" placeholder="Club name" required>
+            <h3><label for="clubname">Portion to be Updated</label></h3>
+            <div class="portion">
+            <input type="radio" id="club-name" name="choice" value="club name">
+            <label for="club-name">Club Name</label>
+            <input type="radio" id="description" name="choice" value="club description">
+            <label for="description">Club Description</label>
+            <input type="radio" id="link" name="choice" value="club registration link">         
+            <label for="link">Club Link</label>
+            </div>
+            <h3><label for="clubname">Portion to be Updated</label></h3>
+            <textarea id="updated-information" name="information" placeholder="Updated Information" rows="6" cols="50" required></textarea>
             <input id ="submit" type="submit" value="Update Club">
         </form>
     </div>
