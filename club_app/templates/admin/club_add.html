@@ -4,21 +4,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>
-    <link rel="stylesheet" href="/static/css/admin/club_add.css">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <script src="https://kit.fontawesome.com/433788771e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/club_app/static/css/admin/club_add.css">
 </head>
 <body>
-    <h1> Add a new club </h1>
-    <div class="add">
-        <form method="POST" action="{{ url_for('admin.add_response') }}">
-            <h3><label for="clubname">Club Name</label></h3>
-            <input type="text" name="club-name" placeholder="Club name" required>
-            <h3><label for="club-description">Club Description</label></h3>
-            <textarea id="club-description" name="description" placeholder="Club description" rows="6" cols="50" required></textarea>
-            <h3><label for="club-registration-link" >Club Registration Link</label></h3>
-            <input type="text" name="registration-link" placeholder="Club registration link" required>
-            <input id ="submit" type="submit" value="Add Club">
+    <h1 style="text-align: center;"> Add Club Form</h1>
+    <div class=container>
+        <form id="add-form" class="add-form" action="" method="post">
+            <div class="form-row">
+                <label for="name">Club Name</label>
+                <input type="text" name="name" id="name" placeholder="Club Name" required>
+            </div>
+            <div class="form-row">
+                <label for="description">Description</label>
+                <textarea name="description" id="description" cols="35" rows="5" placeholder="Short Description of the club" required></textarea>
+            </div>
+            <div class="form-row">
+                <label for="recruitement">Recruitement Process</label>
+                <textarea name="recruitement" id="recruitement" cols="35" rows="5" placeholder="Recruitement Process of the club"></textarea>
+            </div>
+            <div class="form-row">
+                <label for="achievements">Achievements</label>
+                <textarea name="achievements" id="achievemnets" cols="35" rows="5" placeholder="Achievements of the club (if any)"></textarea>
+            </div>
+            <div class="form-row">
+                <label for="core-members">Name of core members</label>
+                <textarea name="core-members" id="core-members" cols="35" rows="5" 
+                                        placeholder="Example:&#10;Name1, designation&#10;Name2, designation, etc" required></textarea>
+            </div>
+            <div class="form-row">
+                <label for="contact-details">Contact details of core members</label>
+                <textarea name="contact-details" id="contact-details" cols="35" rows="5" 
+                                        placeholder="Example:&#10;Name1, contact1&#10;Name2, contact2, etc" required></textarea>
+            </div>
+            <div class="form-row">
+                <label for="website-link">Website Link</label>
+                <input type="url" name="website-link" id="website-link" placeholder="Link to the Website(if any)">
+            </div>
+            <div class="form-row">
+                <label for="facebook-link">Facebook Link</label>
+                <input type="url" name="facebook-link" id="facebook-link" placeholder="Link to facebook page(if any)">
+            </div>
+            <div class="form-row">
+                <label for="instagram-link">Instagram Link</label>
+                <input type="url" name="instagram-link" id="instagram-link" placeholder="Link to instagram page(if any)">
+            </div>
+            <div class="form-text">
+                <a class="add-info-link" onclick="loadMore()" href="#" id="add-info-link">
+                    <i class="fas fa-chevron-right"></i>
+                    Add more information
+                </a>
+                <div class="add-info" style="display: none;">
+                    <div class="form-row">
+                        <label for="twitter-link">Twitter Link</label>
+                        <input type="url" name="twitter-link" id="twitter-link" placeholder="Link to twitter page(if any)">
+                    </div>
+                    <div class="form-row">
+                        <label for="youtube-link">Youtube Link</label>
+                        <input type="url" name="youtube-link" id="youtube-link" placeholder="Link to youtube page(if any)">
+                    </div>
+                    <div class="form-row">
+                        <label for="linkedin-link">Linkedin Link</label>
+                        <input type="url" name="linkedin-link" id="linkedin-link" placeholder="Link to linkedin page(if any)">
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
+    <script src="/club_app/static/js/club_add.js"></script>
 </body>
 </html>

@@ -1,58 +1,66 @@
 body {
-    background-color: whitesmoke;
-    font-family: 'Raleway', sans-serif;
+    background-color:lightblue;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #222;
+    font-weight: 600;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1 {
-    position: absolute;
-    top: 30px;
-    left: 35%;
-}
-
-.add {
-    position: absolute;
-    top: 15vh;
-    left: 8%;
-    width: 80%;
-    height: 78vh;
-    padding: 10px;
-    border: 5px solid grey;
-    margin: 0 auto;
-    /* background-color: lightblue; */
-}
-
-.add label {
-    text-align: center;
-}
-
-.add input, #club-description{
+.container{
+    width: 780px;
     position: relative;
-    left: 10%;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.add-form {
+    padding: 58px 50px 0;
+    height: 100%;
+    overflow-y: auto;
+}
+
+label {
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+label, input {
+    display: block;
+    width: 100%;
+}
+
+input {
+    box-sizing: border-box;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-row {
     width: 60%;
-    height: 20px;
-    font-size: 16px;
-    margin: 0 auto;
-    padding: 10px;
-    border: 5px solid grey;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px #888888;
+    padding: 0 11px;
 }
 
-#club-description {
-    height: 120px;
+textarea {
+    box-sizing: border-box;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#submit {
-    position: relative;
-    left: 25%;
-    top: 40px;
-    width: 10%;
-    height: 60px;
-    font-size: 16px;
-    margin: 0 auto;
-    padding: 10px;
-    border: none;
-    background-color: green;
-    color: white;
-    cursor: pointer;
+.add-info-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+
+a {
+    color: blue;
 }
