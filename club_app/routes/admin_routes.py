@@ -18,11 +18,27 @@ def create_blueprint(cluster):
         club_name = request.form["name"]
         club_description = request.form["description"]
         club_recruitement = request.form["recruitement"]
+        club_website = request.form["website-link"]
+        club_facebook = request.form["facebook-link"]
+        club_twitter = request.form["twitter-link"]
+        club_instagram = request.form["instagram-link"]
+        club_youtube = request.form["youtube-link"]
+        club_achievements = request.form["achievements"]
+        club_core_members = request.form["core-members"]
+        club_contact_details = request.form["contact-details"]
         
         data = {
                 "club name": club_name,
                 "club description": club_description,
-                "club recruitement": club_recruitement
+                "club recruitement": club_recruitement,
+                "club website": club_website,
+                "club facebook": club_facebook,
+                "club twitter": club_twitter,
+                "club instagram": club_instagram,
+                "club youtube": club_youtube,
+                "club achievements": club_achievements,
+                "club core members": club_core_members,
+                "club contact details": club_contact_details
             }
         DataBase.add_club(data)
         flash(f"{club_name} is added successfully to the database.", "Success")
