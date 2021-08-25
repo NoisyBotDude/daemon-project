@@ -13,8 +13,14 @@
         <form method="POST" action="{{ url_for('admin.update_response') }}">
             <h3><label for="clubname">Club Name</label></h3>
             <input type="text" name="club-name" placeholder="Club name" required>
-            <h3><label for="portion-update" >Portion to be Updated</label></h3>
-            <input type="text" name="portion-update" placeholder="Portion to be updated" required>
+            <div class="portion">
+                <input type="radio" id="club-name" name="choice" value="club name">                     
+                <label for="club-name">Club Name</label>                                                                               
+                <input type="radio" id="description" name="choice" value="club description">            
+                <label for="description">Club Description</label>                                                                      
+                <input type="radio" id="link" name="choice" value="club registration link">             
+                <label for="link">Club Link</label>                                                                                    
+            </div>  
             <h3><label for="updated-information">Updated Information</label></h3>
             <textarea id="updated-information" name="information" placeholder="Updated Information" rows="6" cols="50" required></textarea>
             <input id ="submit" type="submit" value="Update Club">
@@ -22,3 +28,5 @@
     </div>
 </body>
 </html>
+
+<input type="text" value="defualt_value" name="price-max" class="form-control" placeholder="Max Price" >

@@ -15,13 +15,14 @@ def create_blueprint(cluster):
 
     @admin.route("/club/add_response", methods = ["POST"])
     def add_response():
-        club_name = request.form["club-name"]
+        club_name = request.form["name"]
         club_description = request.form["description"]
-        club_registration_link = request.form["registration-link"]
+        club_recruitement = request.form["recruitement"]
+        
         data = {
                 "club name": club_name,
                 "club description": club_description,
-                "club registration link": club_registration_link
+                "club recruitement": club_recruitement
             }
         DataBase.add_club(data)
         flash(f"{club_name} is added successfully to the database.", "Success")
@@ -37,14 +38,14 @@ def create_blueprint(cluster):
     def update_response():
         if request.method == "POST":
             club_name = request.form["club-name"]
-            portion_to_update = request.form["portion-update"]
+            portion_to_update = request.form["choice"]
             updated_info = request.form["information"]
 
 
         club = {"club name": club_name}
         data = {
                 "$set": {
-                    f"{portion_to_update.lower()}": f"{updated_info}"
+                    f"{portion_to_update}": f"{updated_info}"
                 }
             }
         DataBase.update_club(club, data)
