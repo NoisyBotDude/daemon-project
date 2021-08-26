@@ -1,7 +1,7 @@
-{% extends 'user/club_info.html' %}
+{% extends 'user/layout.html' %}
 
 {% block title %}
-  Home
+  {{club_infos["club name"]}}
 {% endblock %}
 {% block styles %}
 
@@ -11,15 +11,12 @@
 {%block content %}
 <div class="desc-pic">
   <div class="description">
-    <p>{{club_info[i]["club name"]}} was found during the pandemic to bring industrial know how at the comfort of 
-      your homes. TU alumni who work in a variety of tech domains join them to share their real 
-      journey and experience and answer all your questions in a lively interactive session.
-      <br>
-      You can find their website <a target="_blank" href="http://www.tucssym.com/">here</a>
+    <p> 
+      {{club_infos["club description"]}}
     </p>
   </div>
   <div class="photo">
-    <img src="/static/club-page/images/cs sym logo.695f0345.png" width="30%" height="30%">
+    <img src="/static/images/cs sym logo.695f0345.png" width="70%" height="70%">
   </div>
 </div>
 <br>
@@ -29,16 +26,17 @@
 <div class="achievements">
   <div class="achievement-title"><h1>Achievements</h1></div>
   <div class="achievement-info">
-    <p>Their events were graced by TU alumni who are a part of reputed companies and 
-      institutions both in the country as well as abroad.They also had many international 
-      participants and 45+registrations from different parts of the globe.</p>
+    <p>
+      {{club_infos["club achievements"]}}
+    </p>
   </div>
 </div>
 <div class="recruitment">
   <div class="recruitment-title"><h1>Recruitment</h1></div>
   <div class="recruitment-info">
-    <p>We are always on the look out for people who are keen to communicate, 
-      have a knack for designing ,can document events and are a team player</p>
+    <p>
+      {{club_infos["club recruitement"]}}
+    </p>
   </div>
 </div>
 <!--<div class="club-running">-->

@@ -1,27 +1,31 @@
 .desc-pic {
-    position: relative;
-    width: 100%;
-    height: 320px;
-    top: 1vh;
+      position: relative;
+      top: 50px;
+      width: 100%;
+      padding: 30px;
+      margin: 20px;
 }
-  
+    
 .description {
-      display: block;
-      float: left;
-      position: absolute;
-      left: 10%;
+      /* position: relative;
+      top: 50px; */
+      /* width: 100%; */
+      padding: 30px;
+      margin: 20px;
+      /* left: 350px; */
       font-size: 20px;
-      top: 25vh;
       max-width: 40%;
 }
-  
+    
 .photo {
       position: relative;
+      top: -250px;
+      padding: 30px;
+      margin: 20px;
       float: right;
-      top: 25vh;
-      left: 60%;
+      width: 30%;
 }
-
+  
 .achievements {
       width: 100%;
       padding: 30px;
@@ -66,3 +70,4 @@
       /*float: right;*/
       max-width: 70%;
 }
+
