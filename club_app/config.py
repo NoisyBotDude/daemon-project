@@ -1,11 +1,10 @@
-
 from os import path, environ
 from dotenv import load_dotenv
 
 BASE_URL = path.abspath(path.dirname(__file__))
 
 """
-    Loading all the key value pair specified in 
+    Loading all the key value pair specified in
     .env file into the environment
 """
 load_dotenv(path.join(BASE_URL,'.env'))
