@@ -8,14 +8,17 @@
     <link rel="stylesheet" href="/static/css/admin/club_delete.css">
 </head>
 <body>
-    <h1> Delete a Club </h1>
-    <div class="add">
-        <form method="POST" action="{{ url_for('admin.delete_response') }}">
-            <h3><label for="clubname">Club Name</label></h3>
-            <input type="text" name="club-name" placeholder="Club name" required>
-            <input id ="submit" type="submit" value="Delete Club">
+    <h1 style="text-align: center;"> Delete Club</h1>
+    <div class=container>
+        <form id="add-form" class="add-form" action="{{ url_for('admin.add_response') }}" method="POST">
+            <div class="form-row">
+                <label for="name">Club Name</label>
+                <input type="text" name="name" id="name" placeholder="Club Name" required>
+            </div>
+            <div class="form-row">
+                <input type="submit" value="DELETE">
+            </div>
         </form>
     </div>
-    <h2> Note: Make sure to check the name of the club carefully before deleting. </h2>
 </body>
 </html>
