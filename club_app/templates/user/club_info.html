@@ -1,15 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>
-        {{ club_info["club name"]}}
-        {{ club_info["club description"]}}
-    </h1>
-</body>
-</html>
+{% extends 'user/club_info.html' %}
+
+{% block title %}
+  Home
+{% endblock %}
+{% block styles %}
+
+    <link rel="stylesheet" href="/static/css/user/club_info.css">
+
+{% endblock %}
+{%block content %}
+<div class="desc-pic">
+  <div class="description">
+    <p>{{club_info[i]["club name"]}} was found during the pandemic to bring industrial know how at the comfort of 
+      your homes. TU alumni who work in a variety of tech domains join them to share their real 
+      journey and experience and answer all your questions in a lively interactive session.
+      <br>
+      You can find their website <a target="_blank" href="http://www.tucssym.com/">here</a>
+    </p>
+  </div>
+  <div class="photo">
+    <img src="/static/club-page/images/cs sym logo.695f0345.png" width="30%" height="30%">
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="achievements">
+  <div class="achievement-title"><h1>Achievements</h1></div>
+  <div class="achievement-info">
+    <p>Their events were graced by TU alumni who are a part of reputed companies and 
+      institutions both in the country as well as abroad.They also had many international 
+      participants and 45+registrations from different parts of the globe.</p>
+  </div>
+</div>
+<div class="recruitment">
+  <div class="recruitment-title"><h1>Recruitment</h1></div>
+  <div class="recruitment-info">
+    <p>We are always on the look out for people who are keen to communicate, 
+      have a knack for designing ,can document events and are a team player</p>
+  </div>
+</div>
+<!--<div class="club-running">-->
+  <!--<div class="club-running-title"><h1>Who are running the club</h1></div>-->
+  <!--<div class="club-running-info">-->
+    <!--<ul class="names">-->
+      <!--<li>Adil Bin Bhotto</li>-->
+      <!--<li>Rajdeep Ghosh</li>-->
+      <!--<li>Subhasish Goswami</li>-->
+      <!--<li>Meghna Roy</li>-->
+      <!--<li>Darshana Baruah</li>-->
+      <!--<li>Nirupam Dey</li>-->
+    <!--</ul>-->
+  <!--</div>-->
+<!--</div>-->
+{% endblock %}
