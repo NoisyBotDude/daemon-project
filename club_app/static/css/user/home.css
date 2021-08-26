@@ -92,7 +92,14 @@ li a:hover {
     left: 20%;
     top: 30vh;
     margin-bottom: 40px;
+    height: 300px;
   }
+
+.card button {
+    position: absolute;
+    top: 80%;
+    left: 35%;
+}
 
 #more-btn {
     position: relative;

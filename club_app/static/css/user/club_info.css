@@ -1,0 +1,73 @@
+.desc-pic {
+      position: relative;
+      top: 50px;
+      width: 100%;
+      padding: 30px;
+      margin: 20px;
+}
+    
+.description {
+      /* position: relative;
+      top: 50px; */
+      /* width: 100%; */
+      padding: 30px;
+      margin: 20px;
+      /* left: 350px; */
+      font-size: 20px;
+      max-width: 40%;
+}
+    
+.photo {
+      position: relative;
+      top: -250px;
+      padding: 30px;
+      margin: 20px;
+      float: right;
+      width: 30%;
+}
+  
+.achievements {
+      width: 100%;
+      padding: 30px;
+      margin: 20px;
+}
+
+.achievement-title {
+      position: relative;
+      left: 5%;
+      float: left;
+      width: 30%;
+      margin: 20px;
+      padding: 10px;
+}
+
+.achievement-info {
+      position: relative;
+      left: 350px;
+      font-size: 20px;
+      max-width: 70%;
+}
+
+.recruitment {
+      width: 100%;
+      padding: 30px;
+      margin: 20px;
+}
+
+.recruitment-title {
+      position: relative;
+      left: 5%;
+      float: left;
+      width: 30%;
+      margin: 20px;
+      padding: 10px;
+}
+
+.recruitment-info {
+      position: relative;
+      left: 350px;
+      font-size: 20px;
+      /*float: right;*/
+      max-width: 70%;
+}
+
