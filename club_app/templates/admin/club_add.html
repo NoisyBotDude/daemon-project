@@ -12,7 +12,7 @@
 <body>
     <h1 style="text-align: center;"> Add Club Form</h1>
     <div class=container>
-        <form id="add-form" class="add-form" action="" method="post">
+        <form id="add-form" class="add-form" action="{{ url_for('admin.add_response') }}" method="POST">
             <div class="form-row">
                 <label for="name">Club Name</label>
                 <input type="text" name="name" id="name" placeholder="Club Name" required>
@@ -71,8 +71,23 @@
                     </div>
                 </div>
             </div>
+            <div class="form-row">
+                <input type="submit" value="SUBMIT">
+            </div>
         </form>
     </div>
     <script src="/static/js/club_add.js"></script>
+    <script>
+        function isEmpty() {
+            var name = document.getElementById("name").value;
+            var description = document.getElementById("description").value;
+            var recruitement = document.getElementById("recruitement").value;
+            var facebook_link = document.getElementById("facebook-link").value;
+
+            if(facebook_link == "") {
+                facebook_link = "Not Available";
+            }
+        }
+    </script>
 </body>
 </html>

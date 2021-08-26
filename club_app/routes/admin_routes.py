@@ -15,13 +15,30 @@ def create_blueprint(cluster):
 
     @admin.route("/club/add_response", methods = ["POST"])
     def add_response():
-        club_name = request.form["club-name"]
+        club_name = request.form["name"]
         club_description = request.form["description"]
-        club_registration_link = request.form["registration-link"]
+        club_recruitement = request.form["recruitement"]
+        club_website = request.form["website-link"]
+        club_facebook = request.form["facebook-link"]
+        club_twitter = request.form["twitter-link"]
+        club_instagram = request.form["instagram-link"]
+        club_youtube = request.form["youtube-link"]
+        club_achievements = request.form["achievements"]
+        club_core_members = request.form["core-members"]
+        club_contact_details = request.form["contact-details"]
+        
         data = {
                 "club name": club_name,
                 "club description": club_description,
-                "club registration link": club_registration_link
+                "club recruitement": club_recruitement,
+                "club website": club_website,
+                "club facebook": club_facebook,
+                "club twitter": club_twitter,
+                "club instagram": club_instagram,
+                "club youtube": club_youtube,
+                "club achievements": club_achievements,
+                "club core members": club_core_members,
+                "club contact details": club_contact_details
             }
         DataBase.add_club(data)
         flash(f"{club_name} is added successfully to the database.", "Success")
@@ -37,14 +54,14 @@ def create_blueprint(cluster):
     def update_response():
         if request.method == "POST":
             club_name = request.form["club-name"]
-            portion_to_update = request.form["portion-update"]
+            portion_to_update = request.form["choice"]
             updated_info = request.form["information"]
 
 
         club = {"club name": club_name}
         data = {
                 "$set": {
-                    f"{portion_to_update.lower()}": f"{updated_info}"
+                    f"{portion_to_update}": f"{updated_info}"
                 }
             }
         DataBase.update_club(club, data)

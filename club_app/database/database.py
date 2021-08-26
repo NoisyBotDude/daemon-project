@@ -18,4 +18,12 @@ class DataBase:
     def delete_club(club):
         DataBase.db.clubs.delete_one(club)
 
+    @staticmethod
+    def find_club(club):
+        return DataBase.db.clubs.find_one({ "club name": club})
+
+    @staticmethod
+    def find_club_name(club):
+        return Database.db.clubs.find_one({ "club name": club}) 
+
 
