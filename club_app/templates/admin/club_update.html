@@ -5,22 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
-    <link rel="stylesheet" href="/static/css/admin/club_update.css">
+    <link rel="stylesheet" href="/club_app/static/css/admin/club_update.css">
 </head>
 <body>
-    <h1> Update a club </h1>
-    <div class="add">
-        <form method="POST" action="{{ url_for('admin.update_response') }}">
-        <h3><label for="clubname">Club Name</label></h3>
-            <input type="text" name="club-name" placeholder="Club name" required>
-            <h3><label for="clubname">Portion to be Updated</label></h3>
-            <div class="portion">
-                <input type="radio" id="club-name" name="choice" value="club name">                     
-                <label for="club-name">Club Name</label>                                                                               
-                <input type="radio" id="description" name="choice" value="club description">            
-                <label for="description">Club Description</label>                                                                      
-                <input type="radio" id="link" name="choice" value="club registration link">             
-                <label for="link">Club Link</label>                                                                                    
+    <h1 style="text-align: center;"> Add Club Form</h1>
+    <div class=container>
+        <form id="add-form" class="add-form" action="{{ url_for('admin.add_response') }}" method="POST">
+            <div class="form-row">
+                <label for="name">Club Name</label>
+                <input type="text" name="name" id="name" placeholder="Club Name" required>
+            </div>
+            <div class="form-row">
+                <h3><label for="clubname">Portion to be Updated</label></h3>
+                <div class="portion">
+                    <input type="radio" id="club-name" name="choice" value="club name">                     
+                    <label for="club-name">Club Name</label>                                                                               
+                    <input type="radio" id="description" name="choice" value="club description">            
+                    <label for="description">Description</label>                                                                      
+                    <input type="radio" id="recruitment" name="choice" value="recruitment">             
+                    <label for="recruitment">Recruitment</label>    
+                </div> 
+                <div class="portion">
+                    <input type="radio" id="achievements" name="choice" value="achievements">                     
+                    <label for="achievements">Achievements</label>                                                                               
+                    <input type="radio" id="website-link" name="choice" value="website-link">            
+                    <label for="website-link">Website Link</label>                                                                      
+                    <input type="radio" id="facebook-link" name="choice" value="facebook-link">             
+                    <label for="facebook-link">Facebook Link</label>    
+                </div> 
+                <div class="portion">
+                    <input type="radio" id="instagram-link" name="choice" value="instagram-link">                     
+                    <label for="instagram-link">Instagram Link</label>                                                                               
+                    <input type="radio" id="twitter-link" name="choice" value="twitter-link">            
+                    <label for="twitter-link">Twitter Link</label>                                                                      
+                    <input type="radio" id="linkedin-link" name="choice" value="linkedin-link">             
+                    <label for="linkedin-link">LinkedIn Link</label>    
+                </div>                                                                           
             </div>  
             <h3><label for="updated-information">Updated Information</label></h3>
             <textarea id="updated-information" name="information" placeholder="Updated Information" rows="6" cols="50" required></textarea>
