@@ -10,18 +10,19 @@
 <body>
     <h1>Select one of the options</h1>
     <div class="links">
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-              {% for category, message in messages %}
-                  {{ message }}
-                </div>
-              {% endfor %}
-            {% endif %}
-        {% endwith %}
         <!-- Add the dynamic links inside the href section -->
         <a href="{{ url_for('admin.add') }}"> Add Club </a>
         <a href="{{ url_for('admin.update') }}"> Update Club </a>
         <a href="{{ url_for('admin.delete') }}"> Delete Club </a>
+    </div>
+    <div class="message">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                  {{ message }}
+              {% endfor %}
+            {% endif %}
+        {% endwith %}
     </div>
 </body>
 </html>

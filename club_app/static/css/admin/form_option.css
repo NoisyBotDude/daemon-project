@@ -26,3 +26,9 @@ h1 {
     background-color: lightgrey;
     border-radius: 10px;
 }
+
+.message  {
+    position: relative;
+    left: 35%;
+    top: 30vh;
+}
