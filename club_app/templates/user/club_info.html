@@ -39,17 +39,14 @@
     </p>
   </div>
 </div>
-<!--<div class="club-running">-->
-  <!--<div class="club-running-title"><h1>Who are running the club</h1></div>-->
-  <!--<div class="club-running-info">-->
-    <!--<ul class="names">-->
-      <!--<li>Adil Bin Bhotto</li>-->
-      <!--<li>Rajdeep Ghosh</li>-->
-      <!--<li>Subhasish Goswami</li>-->
-      <!--<li>Meghna Roy</li>-->
-      <!--<li>Darshana Baruah</li>-->
-      <!--<li>Nirupam Dey</li>-->
-    <!--</ul>-->
-  <!--</div>-->
-<!--</div>-->
+<div class="club-running">
+  <div class="club-running-title"><h1>Core Members</h1></div>
+  <div class="club-running-info">
+    <ul class="names">
+      {% for member in club_infos["club core members"] %}
+        <li>{{ member["name"]}}: {{ member["designation"] }}</li>  
+      {% endfor %}
+    </ul>
+  </div>
+</div>
 {% endblock %}
