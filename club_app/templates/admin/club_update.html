@@ -11,13 +11,6 @@
     <h1> Update a club </h1>
     <div class="add">
         <form method="POST" action="{{ url_for('admin.update_response') }}">
-            <h3><label for="clubname">Club Name</label></h3>
-            <input type="text" name="club-name" placeholder="Club name" required>
-            <h3><label for="portion-update" >Portion to be Updated</label></h3>
-            <input type="text" name="portion-update" placeholder="Portion to be updated" required>
-            <h3><label for="updated-information">Updated Information</label></h3>
-            <textarea id="updated-information" name="information" placeholder="Updated Information" rows="6" cols="50" required></textarea>
-            <input id ="submit" type="submit" value="Update Club">
         </form>
     </div>
 </body>
