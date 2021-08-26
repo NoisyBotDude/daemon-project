@@ -10,7 +10,8 @@ def create_blueprint(cluster):
     @user.route("/")
     @user.route("/home")
     def home():
-        return render_template("user/home.html")
+        club_name = DataBase.find_club_name()
+        return render_template("user/home.html", club_name=club_name)
 
     @user.route("/clubs/<string:club_name>")
     def club_info(club_name):

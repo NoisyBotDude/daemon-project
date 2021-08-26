@@ -23,7 +23,10 @@ class DataBase:
         return DataBase.db.clubs.find_one({ "club name": club})
 
     @staticmethod
-    def find_club_name(club):
-        return Database.db.clubs.find_one({ "club name": club}) 
+    def find_club_name():
+        club_names = []
+        for name in DataBase.db.clubs.find({}, { "club name": 1, "_id": 0}):
+            club_names.append(name)
+        return club_names
 
 
