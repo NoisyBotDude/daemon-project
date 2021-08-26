@@ -76,3 +76,9 @@ textarea {
 a {
     color: blue;
 }
+
+.select {
+    width: max-content;
+    margin-bottom: 15px;
+    column-count: 3;
+}

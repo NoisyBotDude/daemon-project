@@ -12,7 +12,7 @@
     <div class=container>
         <form id="add-form" class="add-form" action="{{ url_for('admin.add_response') }}" method="POST">
             <div class="form-row">
-                <label for="name">Club Name</label>
+                <h3><label for="name">Club Name</label></h3>
                 <input type="text" name="name" id="name" placeholder="Club Name" required>
             </div>
             <div class="form-row">
@@ -42,8 +42,58 @@
                     <label for="linkedin-link">LinkedIn Link</label>    
                 </div>                                                                           
             </div>  
-            <h3><label for="updated-information">Updated Information</label></h3>
-            <textarea id="updated-information" name="information" placeholder="Updated Information" rows="6" cols="50" required></textarea>
+            <div class="form-row">
+                <h3><label for="updated-information">Updated Information</label></h3>
+                <textarea id="updated-information" name="information" placeholder="Updated Information" rows="6" cols="50" required></textarea>
+            </div>
+            <div class="form-row">
+                <h3><label for="core-members" >For Update in Core Members</label></h3>
+                <div class="select">
+                    <label for="members">Choose Name of the Member:</label>
+
+                    <select name="members" id="members">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                    </select> 
+                </div>
+                <div class="select">
+                    <label for="cars">Choose the information to update:</label>
+
+                    <select name="cars" id="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                    </select> 
+                </div>
+                <input type="text" name="core-members" id="core-members" placeholder="Updated Information" required>
+            </div>
+            <div class="form-row">
+                <h3><label for="core-members" >For Update in Contact Details</label></h3>
+                <div class="select">
+                    <label for="members">Choose Name of the Member:</label>
+
+                    <select name="members" id="members">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                    </select> 
+                </div>
+                <div class="select">
+                    <label for="cars">Choose the information to update:</label>
+
+                    <select name="cars" id="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                    </select> 
+                </div>
+                <input type="text" name="core-members" id="core-members" placeholder="Updated Information" required>
+            </div>
             <input id ="submit" type="submit" value="Update Club">
         </form>
     </div>
