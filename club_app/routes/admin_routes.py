@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, flash, url_for, redirect, request
 from club_app.database.database import DataBase
+from club_app.database.organise_club_data import organise_data
 
 def create_blueprint(cluster):
     admin = Blueprint("admin",__name__,url_prefix="/admin")
@@ -40,7 +41,8 @@ def create_blueprint(cluster):
                 "club core members": club_core_members,
                 "club contact details": club_contact_details
             }
-        DataBase.add_club(data)
+        organised_data = organise_data(data)
+        DataBase.add_club(organised_data)
         flash(f"{club_name} is added successfully to the database.", "Success")
         return redirect(url_for("admin.option"))
 

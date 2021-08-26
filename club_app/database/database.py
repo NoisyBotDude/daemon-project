@@ -20,7 +20,7 @@ class DataBase:
 
     @staticmethod
     def find_club(club):
-        return DataBase.db.clubs.find_one({ "club name": club})
+        return DataBase.db.clubs.find_one({ "club name": club}, {"_id" : 0})
 
     @staticmethod
     def find_club_name():
