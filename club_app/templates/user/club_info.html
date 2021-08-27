@@ -13,6 +13,9 @@
   <div class="description">
     <p> 
       {{club_infos["club description"]}}
+      <br>
+      <br>
+      Website <a href="{{club_infos['club website']}}">{{club_infos['club website']}}</a>
     </p>
   </div>
   <div class="photo">
@@ -39,9 +42,9 @@
     </p>
   </div>
 </div>
-<div class="club-running">
-  <div class="club-running-title"><h1>Core Members</h1></div>
-  <div class="club-running-info">
+<div class="core-members">
+  <div class="core-members-title"><h1>Core Members</h1></div>
+  <div class="core-members-info">
     <ul class="names">
       {% for member in club_infos["club core members"] %}
         <li>{{ member["name"]}}: {{ member["designation"] }}</li>  

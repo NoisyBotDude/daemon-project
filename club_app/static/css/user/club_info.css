@@ -30,6 +30,7 @@
       width: 100%;
       padding: 30px;
       margin: 20px;
+      min-height: 200px;
 }
 
 .achievement-title {
@@ -43,15 +44,17 @@
 
 .achievement-info {
       position: relative;
-      left: 350px;
+      float: left;
+      left: 250px;
       font-size: 20px;
-      max-width: 70%;
+      max-width: 40%;
 }
 
 .recruitment {
       width: 100%;
       padding: 30px;
       margin: 20px;
+      min-height: 200px;
 }
 
 .recruitment-title {
@@ -65,9 +68,48 @@
 
 .recruitment-info {
       position: relative;
-      left: 350px;
+      float: left;
+      left: 250px;
       font-size: 20px;
-      /*float: right;*/
+      max-width: 40%;
+}
+
+.core-members {
+      width: 100%;
+      padding: 30px;
+      margin: 20px;
+      min-height: 150px;
+}
+
+.core-members-title {
+      position: relative;
+      top: 50px;
+      left: 5%;
+      float: left;
+      width: 30%;
+      margin: 20px;
+      padding: 10px;
+}
+
+.core-members-info {
+      position: relative;
+      left: 250px;
+      font-size: 20px;
+      top: -100px;
+      max-width: 100%;
+}
+
+.core-members-info ul {
+      display: flex;
+      flex-direction: column;
+      column-count: 1;
       max-width: 70%;
+      /* float: left;
+      width: 100%; */
+      flex-wrap: wrap;
+}
+
+.names li {
+      margin-bottom: 20px;
 }
 
