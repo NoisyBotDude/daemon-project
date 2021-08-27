@@ -52,6 +52,16 @@
     </ul>
   </div>
 </div>
+<div class="contact-details">
+  <div class="contact-details-title"><h1>Contact Details</h1></div>
+  <div class="contact-details-info">
+    <ul class="contacts">
+      {% for contact in club_infos["club contact details"] %}
+        <li>{{ contact["name"] }}: {{ contact["contact"] }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
 {% endblock %}
 
 
