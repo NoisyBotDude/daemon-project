@@ -47,10 +47,15 @@ def create_blueprint(cluster):
         return redirect(url_for("admin.option"))
 
 
-    @admin.route("/club/update", methods = ["GET"])
+    @admin.route("/club/update", methods = ["GET", "POST"])
     def update():
-            return render_template("admin/club_update.html", title="Update Club")
-
+        if request.method == "POST":
+            club_name = request.form["club-name"]
+            club_infos = DataBase.find_club(club_name)
+            return render_template("admin/club_update.html", title="Update Club", \
+                                    club_name=club_name, club_infos=club_infos)
+        else:
+            return render_template("admin/club_update_name.html", title="Update Club")
 
     @admin.route("/club/update_response", methods = ["POST", "PUT"])
     def update_response():
