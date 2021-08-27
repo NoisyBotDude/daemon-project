@@ -1,0 +1,46 @@
+body {
+    background-color:lightblue;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #222;
+    font-weight: 600;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container{
+    width: 780px;
+    position: relative;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.update-form {
+    padding: 58px 50px 0;
+    height: 100%;
+    overflow-y: auto;
+}
+
+label {
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+label, input {
+    display: block;
+    width: 100%;
+}
+
+input {
+    box-sizing: border-box;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-row {
+    width: 60%;
+    padding: 0 11px;
+}
