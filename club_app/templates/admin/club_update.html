@@ -10,10 +10,10 @@
 <body>
     <h1 style="text-align: center;"> Add Club Form</h1>
     <div class=container>
-        <form id="add-form" class="add-form" action="{{ url_for('admin.add_response') }}" method="POST">
+        <form id="add-form" class="add-form" action="{{ url_for('admin.update_response') }}" method="POST">
             <div class="form-row">
-                <h3><label for="name">Club Name</label></h3>
-                <input type="text" name="name" id="name" placeholder="Club Name" required>
+                <h3><label for="club-name">Club Name</label></h3>
+                <input type="text" name="club-name" id="name" placeholder="Club Name" required>
             </div>
             <div class="form-row">
                 <h3><label for="clubname">Portion to be Updated</label></h3>
