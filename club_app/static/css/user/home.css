@@ -103,22 +103,13 @@ li a:hover {
 
 #more-btn {
     position: relative;
-    top: 30vh;
+    top: 200px;
     left: 45%;
   }
 
 #more {
     display: none;
-  }
-
-@keyframes showmore {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+}
 
 @media screen and (max-width: 600px) {
     .column {
@@ -130,4 +121,4 @@ li a:hover {
     .li, .logo {
       float: none;
     }
-  }
+}

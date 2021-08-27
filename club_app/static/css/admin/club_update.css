@@ -14,7 +14,7 @@ body {
     background-color: #fff;
 }
 
-.add-form {
+.update-form {
     padding: 58px 50px 0;
     height: 100%;
     overflow-y: auto;
@@ -64,13 +64,6 @@ textarea {
     font-size: 14px;
     font-weight: 700;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.add-info-link {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 900;
-    margin-bottom: 16px;
 }
 
 a {
