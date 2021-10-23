@@ -1,20 +1,32 @@
-from flask import Blueprint, render_template, flash, url_for, redirect, request
-from club_app.database.database import DataBase
+from flask import Blueprint, render_template, flash, url_for, redirect, request, session
+from club_app.database.database import ClubDataBase
 from club_app.database.organise_club_data import organise_data
 
 def create_blueprint(cluster):
-    admin = Blueprint("admin",__name__,url_prefix="/admin")
+    admin = Blueprint("admin", __name__, url_prefix="/admin/club")
     db = cluster.db
 
-    @admin.route("/club", methods=["GET"])
+    def is_logged_in(func):
+        def wrapper():
+            if not session.get("name"):
+                flash("Authendication required!!!")
+                return redirect(url_for("admin_auth.admin_home"))
+            return func()
+        wrapper.__name__ = func.__name__
+        return wrapper
+
+    @admin.route("/", methods=["GET"])
+    @is_logged_in
     def option():
         return render_template("admin/form_option.html", title="Admin options")
 
-    @admin.route("/club/add", methods=["GET"])
+    @admin.route("/add", methods=["GET"])
+    @is_logged_in
     def add():
         return render_template("admin/club_add.html", title="Add Club")
 
-    @admin.route("/club/add_response", methods = ["POST"])
+    @admin.route("/add_response", methods = ["POST"])
+    @is_logged_in
     def add_response():
         club_name = request.form["name"]
         club_description = request.form["description"]
@@ -42,22 +54,24 @@ def create_blueprint(cluster):
                 "club contact details": club_contact_details
             }
         organised_data = organise_data(data)
-        DataBase.add_club(organised_data)
+        ClubDataBase.add_club(organised_data)
         flash(f"{club_name} is added successfully to the database.", "Success")
         return redirect(url_for("admin.option"))
 
 
-    @admin.route("/club/update", methods = ["GET", "POST"])
+    @admin.route("/update", methods = ["GET", "POST"])
+    @is_logged_in
     def update():
         if request.method == "POST":
             club_name = request.form["club-name"]
-            club_infos = DataBase.find_club(club_name)
+            club_infos = ClubDataBase.find_club(club_name)
             return render_template("admin/club_update.html", title="Update Club", \
                                     club_name=club_name, club_infos=club_infos)
         else:
             return render_template("admin/club_update_name.html", title="Update Club")
 
-    @admin.route("/club/update_response", methods = ["POST", "PUT"])
+    @admin.route("/update_response", methods = ["POST", "PUT"])
+    @is_logged_in
     def update_response():
         if request.method == "POST":
             club_name = request.form["club-name"]
@@ -71,19 +85,21 @@ def create_blueprint(cluster):
                     f"{portion_to_update}": f"{updated_info}"
                 }
             }
-        DataBase.update_club(club, data)
+        ClubDataBase.update_club(club, data)
         flash(f"{club_name} is updated successfully in the database.", "Success")
         return redirect(url_for("admin.option"))
 
-    @admin.route("/club/delete", methods=["GET", "POST"])
+    @admin.route("/delete", methods=["GET", "POST"])
+    @is_logged_in
     def delete():
         return render_template("admin/club_delete.html", title="Delete Club")
 
-    @admin.route("/club/delete_response", methods=["POST", "DELETE"])
+    @admin.route("/delete_response", methods=["POST", "DELETE"])
+    @is_logged_in
     def delete_response():
         club_name = request.form["club-name"]
         club = {"club name": f"{club_name}"}
-        DataBase.delete_club(club)
+        ClubDataBase.delete_club(club)
         flash(f"{club_name} is deleted successfully from the database.", "Success")
         return redirect(url_for("admin.option"))
 
