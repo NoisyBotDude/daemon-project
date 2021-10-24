@@ -67,8 +67,7 @@ def create_blueprint(cluster):
             club_infos = ClubDataBase.find_club(club_name)
             return render_template("admin/club_update.html", title="Update Club", \
                                     club_name=club_name, club_infos=club_infos)
-        else:
-            return render_template("admin/club_update_name.html", title="Update Club")
+        return render_template("admin/club_update_name.html", title="Update Club")
 
     @admin.route("/update_response", methods = ["POST", "PUT"])
     @is_logged_in

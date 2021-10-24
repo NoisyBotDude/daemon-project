@@ -20,7 +20,13 @@ class ClubDataBase:
 
     @staticmethod
     def find_club(club):
-        return ClubDataBase.db.clubs.find_one({"club name": club}, {"_id": 0})
+        return ClubDataBase.db.clubs.find_one(
+            {"club name": club},
+            {
+                "_id": 0,
+                "club core members": 1,
+                "club contact details": 1
+            })
 
     @staticmethod
     def find_club_name():
