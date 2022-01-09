@@ -3,8 +3,6 @@ from typing import Container
 
 def organise_data(data):
 
-    organised_data = {key: value for key,value in data.items() if key != "club core members" or key != "club contact details"}
-
     member_list = data["club core members"].split(",")
     contact_list = data["club contact details"].split(",")
 
