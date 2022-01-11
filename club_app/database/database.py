@@ -9,7 +9,7 @@ class ClubDataBase:
     @staticmethod
     def count():
         return ClubDataBase.db.users.count_documents({})
-    
+
     @staticmethod
     def add_club(data):
         ClubDataBase.db.clubs.insert_one(data)
@@ -27,9 +27,7 @@ class ClubDataBase:
         return ClubDataBase.db.clubs.find_one(
             {"club name": club},
             {
-                "_id": 0,
-                "club core members": 1,
-                "club contact details": 1
+                "_id": 0
             })
 
     @staticmethod
@@ -38,6 +36,7 @@ class ClubDataBase:
         for name in ClubDataBase.db.clubs.find({}, {"club name": 1, "_id": 0}):
             club_names.append(name)
         return club_names
+
 
 class AdminDataBase:
 
@@ -57,7 +56,8 @@ class AdminDataBase:
 
     @staticmethod
     def find_admin(email, password):
-        admin_data = AdminDataBase.db.admins.find_one({"email": email}, {"name": 1, "email": 1, "password": 1, "_id": 0})
+        admin_data = AdminDataBase.db.admins.find_one(
+            {"email": email}, {"name": 1, "email": 1, "password": 1, "_id": 0})
         return admin_data
 
     @staticmethod
@@ -66,6 +66,3 @@ class AdminDataBase:
             return True
         else:
             return False
-
-
-
