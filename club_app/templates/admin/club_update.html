@@ -10,7 +10,7 @@
 <body>
     <h1 style="text-align: center;"> Update Club Form</h1>
     <div class=container>
-        <form id="update-form" class="update-form" action="{{ url_for('admin.update_response') }}" method="POST">
+        <form id="update-form" class="update-form" action="{{ url_for('admin.update_response',club_name=club_name) }}" method="POST">
             <div class="form-row">
                 <h3><label for="club-name">Club Name</label></h3>
                 <input type="text" name="club-name" value="{{ club_name }}" id="club-name" placeholder="Club Name" readonly>
@@ -22,7 +22,7 @@
                     <label for="club-name">Club Name</label>                                                                               
                     <input type="radio" id="description" name="choice" value="club description">            
                     <label for="description">Description</label>                                                                      
-                    <input type="radio" id="recruitment" name="choice" value="recruitment">             
+                    <input type="radio" id="recruitment" name="choice" value="recruitement">
                     <label for="recruitment">Recruitment</label>    
                 </div> 
                 <div class="portion">
@@ -51,21 +51,26 @@
                 <div class="select">
                     <label for="members">Choose Name of the Member:</label>
 
-                    <select name="members" id="members">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
+                    <select name="member_name" id="member_name">
+                        <option value="None">None</option>
+                        {% for members in club_infos["club core members"] %}
+                            <option value={{ members["name"] }}>{{ members["name"] }}</option>
+                        {% endfor %}
+<!--                    <option value="volvo">Volvo</option>-->
+<!--                    <option value="saab">Saab</option>-->
+<!--                    <option value="mercedes">Mercedes</option>-->
+<!--                    <option value="audi">Audi</option>-->
                     </select> 
                 </div>
                 <div class="select">
                     <label for="cars">Choose the information to update:</label>
 
-                    <select name="cars" id="cars">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
+                    <select name="member_update" id="member_update" >
+                        <option value="None">None</option>
+                        <option value="name">Name</option>
+                        <option value="designation">Designation</option>
+<!--                    <option value="mercedes">Mercedes</option>-->
+<!--                    <option value="audi">Audi</option>-->
                     </select> 
                 </div>
                 <input type="text" name="core-members" id="core-members" placeholder="Updated Information">
@@ -76,23 +81,23 @@
                     <label for="members">Choose Name of the Member:</label>
 
                     <select name="members" id="members">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
+                        <option value="None">None</option>
+                    {% for members in club_infos["club core members"] %}
+                            <option value={{ members["name"] }}>{{ members["name"] }}</option>
+                        {% endfor %}
                     </select> 
                 </div>
-                <div class="select">
-                    <label for="cars">Choose the information to update:</label>
+<!--                <div class="select">-->
+<!--                    <label for="cars">Choose the information to update:</label>-->
 
-                    <select name="cars" id="cars">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                    </select> 
-                </div>
-                <input type="text" name="core-members" id="core-members" placeholder="Updated Information">
+<!--                    <select name="cars" id="cars">-->
+<!--                    <option value="volvo">Volvo</option>-->
+<!--                    <option value="saab">Saab</option>-->
+<!--                    <option value="mercedes">Mercedes</option>-->
+<!--                    <option value="audi">Audi</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+                <input type="text" name="member_contact" id="core-members" placeholder="Updated Contact Number">
             </div>
             <input id ="submit" type="submit" value="Update Club">
         </form>

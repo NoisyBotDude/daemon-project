@@ -1,89 +1,106 @@
-from flask import Blueprint, render_template, flash, url_for, redirect, request
-from club_app.database.database import DataBase
+from flask import Blueprint, render_template, flash, url_for, redirect, request, session
+from club_app.database.database import ClubDataBase
 from club_app.database.organise_club_data import organise_data
+from club_app.database.save_image import save_image
 
 def create_blueprint(cluster):
-    admin = Blueprint("admin",__name__,url_prefix="/admin")
+    admin = Blueprint("admin", __name__, url_prefix="/admin/club")
     db = cluster.db
 
-    @admin.route("/club", methods=["GET"])
+    def is_logged_in(func):
+        def wrapper():
+            if not session.get("name"):
+                flash("Authentication required!!!")
+                return redirect(url_for("admin_auth.admin_home"))
+            return func()
+        wrapper.__name__ = func.__name__
+        return wrapper
+
+    @admin.route("/", methods=["GET"])
+    @is_logged_in
     def option():
         return render_template("admin/form_option.html", title="Admin options")
 
-    @admin.route("/club/add", methods=["GET"])
+    @admin.route("/add", methods=["GET"])
+    @is_logged_in
     def add():
         return render_template("admin/club_add.html", title="Add Club")
 
-    @admin.route("/club/add_response", methods = ["POST"])
+    @admin.route("/add_response", methods = ["POST"])
+    @is_logged_in
     def add_response():
         club_name = request.form["name"]
-        club_description = request.form["description"]
-        club_recruitement = request.form["recruitement"]
-        club_website = request.form["website-link"]
-        club_facebook = request.form["facebook-link"]
-        club_twitter = request.form["twitter-link"]
-        club_instagram = request.form["instagram-link"]
-        club_youtube = request.form["youtube-link"]
-        club_achievements = request.form["achievements"]
-        club_core_members = request.form["core-members"]
-        club_contact_details = request.form["contact-details"]
+        club_logo = request.files['club-logo']
         
         data = {
                 "club name": club_name,
-                "club description": club_description,
-                "club recruitement": club_recruitement,
-                "club website": club_website,
-                "club facebook": club_facebook,
-                "club twitter": club_twitter,
-                "club instagram": club_instagram,
-                "club youtube": club_youtube,
-                "club achievements": club_achievements,
-                "club core members": club_core_members,
-                "club contact details": club_contact_details
+                "club description": request.form["description"],
+                "club recruitement": request.form["recruitement"],
+                "club website": request.form["website-link"],
+                "club facebook": request.form["facebook-link"],
+                "club twitter": request.form["twitter-link"],
+                "club instagram": request.form["instagram-link"],
+                "club youtube": request.form["youtube-link"],
+                "club achievements": request.form["achievements"],
+                "club core members":  request.form["core-members"],
+                "club contact details": request.form["contact-details"]
             }
         organised_data = organise_data(data)
-        DataBase.add_club(organised_data)
+        ClubDataBase.add_club(organised_data)
+        save_image(club_logo, club_name)
         flash(f"{club_name} is added successfully to the database.", "Success")
         return redirect(url_for("admin.option"))
 
 
-    @admin.route("/club/update", methods = ["GET", "POST"])
+    @admin.route("/update", methods = ["GET", "POST"])
+    @is_logged_in
     def update():
         if request.method == "POST":
             club_name = request.form["club-name"]
-            club_infos = DataBase.find_club(club_name)
+            club_infos = ClubDataBase.find_club(club_name)
             return render_template("admin/club_update.html", title="Update Club", \
                                     club_name=club_name, club_infos=club_infos)
-        else:
-            return render_template("admin/club_update_name.html", title="Update Club")
+        return render_template("admin/club_update_name.html", title="Update Club")
 
-    @admin.route("/club/update_response", methods = ["POST", "PUT"])
+    @admin.route("/update_response", methods = ["POST", "PUT"])
+    @is_logged_in
     def update_response():
+        club_name = request.args.get("club_name")
         if request.method == "POST":
-            club_name = request.form["club-name"]
-            portion_to_update = request.form["choice"]
+            update_choice = request.form["choice"]
             updated_info = request.form["information"]
+            #for member update
+            member_name = request.form["member_name"]
+            member_update = request.form["member_update"]
+            #for contact update
 
 
-        club = {"club name": club_name}
-        data = {
-                "$set": {
-                    f"{portion_to_update}": f"{updated_info}"
+
+            club = {"club name": club_name}
+            data = {
+                    "$set": {
+                        f"{update_choice}": f"{updated_info}"
+                    }
                 }
-            }
-        DataBase.update_club(club, data)
+            ClubDataBase.update_club(club, data)
+
+            if request.form["member_name"]:
+
+                print(member_name, member_update)
         flash(f"{club_name} is updated successfully in the database.", "Success")
         return redirect(url_for("admin.option"))
 
-    @admin.route("/club/delete", methods=["GET", "POST"])
+    @admin.route("/delete", methods=["GET", "POST"])
+    @is_logged_in
     def delete():
         return render_template("admin/club_delete.html", title="Delete Club")
 
-    @admin.route("/club/delete_response", methods=["POST", "DELETE"])
+    @admin.route("/delete_response", methods=["POST", "DELETE"])
+    @is_logged_in
     def delete_response():
         club_name = request.form["club-name"]
         club = {"club name": f"{club_name}"}
-        DataBase.delete_club(club)
+        ClubDataBase.delete_club(club)
         flash(f"{club_name} is deleted successfully from the database.", "Success")
         return redirect(url_for("admin.option"))
 

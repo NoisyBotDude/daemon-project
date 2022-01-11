@@ -12,7 +12,7 @@
 <body>
     <h1 style="text-align: center;"> Add Club Form</h1>
     <div class=container>
-        <form id="add-form" class="add-form" action="{{ url_for('admin.add_response') }}" method="POST">
+        <form id="add-form" class="add-form" action="{{ url_for('admin.add_response') }}" method="POST" enctype="multipart/form-data">
             <div class="form-row">
                 <label for="name">Club Name</label>
                 <input type="text" name="name" id="name" placeholder="Club Name" required>
@@ -69,6 +69,11 @@
                         <label for="linkedin-link">Linkedin Link</label>
                         <input type="url" name="linkedin-link" id="linkedin-link" placeholder="Link to linkedin page(if any)">
                     </div>
+                    <div>
+                        <label for="club-logo">Upload image of the club's logo</label>
+                        <input type="file" name="club-logo" accept="image/*" id="club-logo" placeholder="Place to upload logo" required>
+                    </div>
+                    
                 </div>
             </div>
             <div class="form-row">
