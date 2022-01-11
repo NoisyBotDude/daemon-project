@@ -5,6 +5,10 @@ class ClubDataBase:
     @staticmethod
     def initialize(cluster):
         ClubDataBase.db = cluster.db
+
+    @staticmethod
+    def count():
+        return ClubDataBase.db.users.count_documents({})
     
     @staticmethod
     def add_club(data):
