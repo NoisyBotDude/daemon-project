@@ -1,13 +1,13 @@
 body {
-    background-color:lightblue;
+    background-color: lightblue;
     font-size: 13px;
     line-height: 1.8;
     color: #222;
     font-weight: 600;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.container{
+.container {
     width: 780px;
     position: relative;
     margin: 0 auto;
@@ -26,7 +26,8 @@ label {
     margin-bottom: 10px;
 }
 
-label, input {
+label,
+input {
     display: block;
     width: 100%;
 }
@@ -37,7 +38,7 @@ input {
     margin-bottom: 15px;
     font-size: 14px;
     font-weight: 700;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .form-row {
@@ -51,7 +52,7 @@ textarea {
     margin-bottom: 15px;
     font-size: 14px;
     font-weight: 700;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .add-info-link {
