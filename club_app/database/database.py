@@ -8,7 +8,7 @@ class ClubDataBase:
 
     @staticmethod
     def count():
-        return ClubDataBase.db.users.count_documents({})
+        return ClubDataBase.db.clubs.count_documents({})
 
     @staticmethod
     def add_club(data):
