@@ -17,4 +17,12 @@ def create_blueprint(cluster):
         club_infos = ClubDataBase.find_club(club_name)
         return render_template("user/club_info.html", club_infos=club_infos)
 
+    @user.route("/about")
+    def about():
+        return render_template("user/about.html")
+
+    @user.route("/contact-us")
+    def contact():
+        return render_template("user/contact.html")
+
     return user
