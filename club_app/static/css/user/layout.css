@@ -1,12 +1,12 @@
 body {
-    background-color: azure;
+    background-color: skyblue;
     overflow-x: hidden;
   }
 
 .navbar {
     position: sticky;
     top: 1px;
-    background-color: azure;
+    background-color: skyblue;
     padding-top: 20px;
     z-index: 1;
   }
@@ -47,7 +47,7 @@ li a, .logo a {
   }
 
 li a:hover {
-    background-color: lightgrey;
+    background-color: green;
     background-position: initial;
     border-radius: 10px;
   }

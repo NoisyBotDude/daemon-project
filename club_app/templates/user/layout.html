@@ -19,10 +19,10 @@
   <div class="navbar">
     <ul>
       <l1 class="logo"><a href="#">Logo</a></l1>
-      <li><a href="#">Home</a></li>
-      <li><a href="#"> Contact Us</a></li>
-      <li><a href="#">Contribute</a></li>
-      <li><a href="#">About Us</a></li>
+      <li><a href="{{ url_for('user.home')}}">Home</a></li>
+      <li><a href="{{ url_for('user.contact')}}"> Contact Us</a></li>
+      <li><a target="_blank" href="https://github.com/NoisyBotDude/daemon-project">Contribute</a></li>
+      <li><a href="{{ url_for('user.about')}}">About Us</a></li>
     </ul>
   </div>
   {%block content %}
