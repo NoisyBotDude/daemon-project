@@ -1,5 +1,6 @@
 from club_app.database.database import ClubDataBase
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
+from ..utils import send_email
 import os
 from posixpath import abspath
 
@@ -25,8 +26,14 @@ def create_blueprint(cluster):
     def about():
         return render_template("user/about.html")
 
-    @user.route("/contact-us")
+    @user.route("/contact-us", methods = ["GET", "POST"])
     def contact():
+        if request.method == "POST":
+            name = request.form["name"]
+            email = request.form["email"]
+            comment = request.form["comment"]
+
+            send_email(f"Name: {name}\nEmail: {email}\nComment: {comment}")
         return render_template("user/contact.html")
 
     return user
