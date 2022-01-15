@@ -46,7 +46,7 @@ li a, .logo a {
     padding: 10px;
   }
 
-li a:hover {
+.navbar li a:hover {
     background-color: green;
     background-position: initial;
     border-radius: 10px;

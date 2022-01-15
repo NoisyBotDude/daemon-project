@@ -158,3 +158,42 @@
       margin-bottom: 20px;
 }
 
+.socialmedialinks {
+      width: 100%;
+      padding: 30px;
+      margin: 20px;
+      min-height: 150px;
+}
+
+.socialmedialinks-title {
+      position: relative;
+      top: 50px;
+      left: 5%;
+      float: left;
+      width: 30%;
+      margin: 20px;
+      padding: 10px;
+}
+
+.socialmedialinks-info {
+      position: relative;
+      left: 250px;
+      font-size: 20px;
+      top: -100px;
+      max-width: 100%;
+}
+
+.socialmedialinks-info ul {
+      display: flex;
+      flex-direction: column;
+      column-count: 1;
+      max-width: 70%;
+      /* float: left;
+      width: 100%; */
+      flex-wrap: wrap;
+}
+
+.social-links li {
+      margin-bottom: 20px;
+}
+

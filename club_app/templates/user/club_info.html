@@ -16,7 +16,9 @@
       {{club_infos["club description"]}}
       <br>
       <br>
-      Website <a href="{{club_infos['club website']}}">{{club_infos['club website']}}</a>
+      {% if club_infos['club website'] %}
+        Website <a href="{{club_infos['club website']}}">{{club_infos['club website']}}</a>
+      {% endif %}
     </p>
   </div>
   <div class="photo">
@@ -68,6 +70,16 @@
     </ul>
   </div>
 </div>
+<div class="socialmedialinks">
+  <div class="socialmedialinks-title"><h1>Social Media Links</h1></div>
+  <div class="socialmedialinks-info">
+    <ul class="social-links">     
+        <li><a href="{{ club_infos['club twitter'] }}">Twitter</a></li>  
+        <li><a href="{{ club_infos['club instagram'] }}">Instagram</a></li>  
+        <li><a href="{{ club_infos['club facebook'] }}">Facebook</a></li>  
+    </ul>
+  </div>
+</div>
 {% endblock %}
 
 
@@ -79,8 +91,3 @@ YouTube link - {{ club_infos["club youtube"] }}
 Instagram link - {{ club_infos["club instagram"] }}
 
 check if links are empty. if empty then just pass a line saying that the link is not available. otherwise pass the link.
-
-contact details--
-{% for contact in club_infos["club contact details"] %}
-  <li>{{ cntact["name"] }}: {{ contact["contact"] }}</li>
-{% endfor %} -->
