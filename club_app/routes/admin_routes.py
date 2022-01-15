@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, flash, url_for, redirect, request, session
 from club_app.database.database import ClubDataBase
 from club_app.database.organise_club_data import organise_data
-from club_app.database.save_image import save_image
+from club_app.database.image_manipulation import save_image
 
 def create_blueprint(cluster):
     admin = Blueprint("admin", __name__, url_prefix="/admin/club")
@@ -73,7 +73,8 @@ def create_blueprint(cluster):
             member_name = request.form["member_name"]
             member_update = request.form["member_update"]
             #for contact update
-
+            contact_member_name = request.form["members"]
+            contact_update = request.form["member_contact"]
 
 
             club = {"club name": club_name}
@@ -82,6 +83,8 @@ def create_blueprint(cluster):
                         f"{update_choice}": f"{updated_info}"
                     }
                 }
+            
+            member_data = 
             ClubDataBase.update_club(club, data)
 
             if request.form["member_name"]:
