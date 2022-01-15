@@ -84,7 +84,6 @@ def create_blueprint(cluster):
                     }
                 }
             
-            member_data = 
             ClubDataBase.update_club(club, data)
 
             if request.form["member_name"]:

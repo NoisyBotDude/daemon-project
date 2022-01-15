@@ -1,7 +1,7 @@
 {% extends 'user/layout.html' %}
 
 {% block title %}
-Home
+  {{ title }}
 {% endblock %}
 {% block styles %}
 
@@ -9,7 +9,7 @@ Home
 
 {% endblock %}
 {% block content %}
-<form action="{{ url_for('admin.about') }}" method="POST">
+<form action="{{ url_for('user.contact') }}" method="POST">
   <input name="name" type="text" class="feedback-input" placeholder="Name" />
   <input name="email" type="text" class="feedback-input" placeholder="Email" />
   <textarea name="comment" class="feedback-input" placeholder="Comment"></textarea>
