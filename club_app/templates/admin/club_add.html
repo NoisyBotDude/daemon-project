@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,62 +9,35 @@
     <script src="https://kit.fontawesome.com/433788771e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/static/css/admin/club_add.css">
 </head>
-
 <body>
     <h1 style="text-align: center;"> Add Club Form</h1>
     <div class=container>
-        <form id="add-form" class="add-form" action="{{ url_for('admin.add_response') }}" method="POST"
-            enctype="multipart/form-data">
+        <form id="add-form" class="add-form" action="{{ url_for('admin.add_response') }}" method="POST" enctype="multipart/form-data">
             <div class="form-row">
                 <label for="name">Club Name</label>
                 <input type="text" name="name" id="name" placeholder="Club Name" required>
             </div>
             <div class="form-row">
                 <label for="description">Description</label>
-                <textarea name="description" id="description" cols="35" rows="5"
-                    placeholder="Short Description of the club" required></textarea>
+                <textarea name="description" id="description" cols="35" rows="5" placeholder="Short Description of the club" required></textarea>
             </div>
             <div class="form-row">
                 <label for="recruitement">Recruitement Process</label>
-                <textarea name="recruitement" id="recruitement" cols="35" rows="5"
-                    placeholder="Recruitement Process of the club"></textarea>
+                <textarea name="recruitement" id="recruitement" cols="35" rows="5" placeholder="Recruitement Process of the club"></textarea>
             </div>
             <div class="form-row">
                 <label for="achievements">Achievements</label>
-                <textarea name="achievements" id="achievemnets" cols="35" rows="5"
-                    placeholder="Achievements of the club (if any)"></textarea>
+                <textarea name="achievements" id="achievemnets" cols="35" rows="5" placeholder="Achievements of the club (if any)"></textarea>
             </div>
             <div class="form-row">
                 <label for="core-members">Name of core members</label>
-                <table id="table-1">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <input type="text" name="core-members-name-1" id="core-members-name-1" placeholder="Name" required>
-                            </td>
-                            <td>
-                                <input type="text" name="core-members-details-1" id="core-members-details-1" placeholder="Designation" required>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button id="add-row" onclick="addRowMembers()" type="button">Add Row</button>
+                <textarea name="core-members" id="core-members" cols="35" rows="5" 
+                                        placeholder="Example:&#10;Name1, designation;&#10;Name2, designation; etc" required></textarea>
             </div>
             <div class="form-row">
-                <label for="core-members">Contact Details of Core Members</label>
-                <table id="table-2">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <input type="text" name="core-members-name-2" id="core-members-name-2" placeholder="Name" required>
-                            </td>
-                            <td>
-                                <input type="text" name="core-members-details-2" id="core-members-details-2" placeholder="Contact" required>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button id="add-row" onclick="addRowContacts()" type="button">Add Row</button>
+                <label for="contact-details">Contact details of core members</label>
+                <textarea name="contact-details" id="contact-details" cols="35" rows="5" 
+                                        placeholder="Example:&#10;Name1, contact1;&#10;Name2, contact2; etc" required></textarea>
             </div>
             <div class="form-row">
                 <label for="website-link">Website Link</label>
@@ -77,8 +49,7 @@
             </div>
             <div class="form-row">
                 <label for="instagram-link">Instagram Link</label>
-                <input type="url" name="instagram-link" id="instagram-link"
-                    placeholder="Link to instagram page(if any)">
+                <input type="url" name="instagram-link" id="instagram-link" placeholder="Link to instagram page(if any)">
             </div>
             <div class="form-text">
                 <a class="add-info-link" onclick="loadMore()" href="#" id="add-info-link">
@@ -88,25 +59,21 @@
                 <div class="add-info" style="display: none;">
                     <div class="form-row">
                         <label for="twitter-link">Twitter Link</label>
-                        <input type="url" name="twitter-link" id="twitter-link"
-                            placeholder="Link to twitter page(if any)">
+                        <input type="url" name="twitter-link" id="twitter-link" placeholder="Link to twitter page(if any)">
                     </div>
                     <div class="form-row">
                         <label for="youtube-link">Youtube Link</label>
-                        <input type="url" name="youtube-link" id="youtube-link"
-                            placeholder="Link to youtube page(if any)">
+                        <input type="url" name="youtube-link" id="youtube-link" placeholder="Link to youtube page(if any)">
                     </div>
                     <div class="form-row">
                         <label for="linkedin-link">Linkedin Link</label>
-                        <input type="url" name="linkedin-link" id="linkedin-link"
-                            placeholder="Link to linkedin page(if any)">
+                        <input type="url" name="linkedin-link" id="linkedin-link" placeholder="Link to linkedin page(if any)">
                     </div>
                     <div>
                         <label for="club-logo">Upload image of the club's logo</label>
-                        <input type="file" name="club-logo" accept="image/*" id="club-logo"
-                            placeholder="Place to upload logo" required>
+                        <input type="file" name="club-logo" accept="image/*" id="club-logo" placeholder="Place to upload logo" required>
                     </div>
-
+                    
                 </div>
             </div>
             <div class="form-row">
@@ -122,11 +89,10 @@
             var recruitement = document.getElementById("recruitement").value;
             var facebook_link = document.getElementById("facebook-link").value;
 
-            if (facebook_link == "") {
+            if(facebook_link == "") {
                 facebook_link = "Not Available";
             }
         }
     </script>
 </body>
-
 </html>
