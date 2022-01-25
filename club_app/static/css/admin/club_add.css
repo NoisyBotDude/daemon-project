@@ -46,6 +46,15 @@ input {
     padding: 0 11px;
 }
 
+.add-details {
+    box-sizing: border-box;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 textarea {
     box-sizing: border-box;
     padding: 15px 20px;

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{{ title }}</title>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <script src="https://kit.fontawesome.com/433788771e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/static/css/admin/club_add.css">
@@ -31,13 +31,37 @@
             </div>
             <div class="form-row">
                 <label for="core-members">Name of core members</label>
-                <textarea name="core-members" id="core-members" cols="35" rows="5" 
-                                        placeholder="Example:&#10;Name1:designation,&#10;Name2:designation, etc" required></textarea>
+                <table class="core-members" id="core-members">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Designation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" name="core-members-name-0" id="core-members-name" placeholder="Name" required></td>
+                            <td><input type="text" name="core-members-designation-0" id="core-members-designation" placeholder="Designation" required></td>
+                        </tr>
+                </table>
+                <button type="button" class="add-details">Add Core Member</button>
             </div>
             <div class="form-row">
                 <label for="contact-details">Contact details of core members</label>
-                <textarea name="contact-details" id="contact-details" cols="35" rows="5" 
-                                        placeholder="Example:&#10;Name1:contact1,&#10;Name2:contact2, etc" required></textarea>
+                <table class="contact-details" id="contact-details">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Contact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" name="contact-details-name-0" id="contact-details-name" placeholder="Name" required></td>
+                            <td><input type="text" name="contact-details-number-0" id="contact-details-number" placeholder="Contact" required></td>
+                        </tr>
+                </table>
+                <button type="button" class="add-details">Add Contact</button>
             </div>
             <div class="form-row">
                 <label for="website-link">Website Link</label>
@@ -81,6 +105,7 @@
             </div>
         </form>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/static/js/club_add.js"></script>
     <script>
         function isEmpty() {
